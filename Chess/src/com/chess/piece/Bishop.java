@@ -50,6 +50,9 @@ public class Bishop extends AbstractPiece implements Move {
                     break;
                 } else if (squareMap.get(next).getCurrentPiece()
                             .pieceColor != this.pieceColor) {
+                    
+                    // I wanted to create listing based on the color of the pieces on attacked square.
+                    
                     if (squareMap.get(next).getCurrentPiece().getPieceColor().equals(PieceColor.WHITE)) {
                         whiteAttackedBishop.add(squareMap.get(next).getCurrentPiece().getName()
                                 + squareMap.get(next).getLocation());
