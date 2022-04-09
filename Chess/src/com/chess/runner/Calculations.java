@@ -23,6 +23,9 @@ public class Calculations {
     public static Queen queen = new Queen();
     public static King king = new King();
     public static Pawn pawn = new Pawn();
+    
+    // Third try for code to send 2 different double values to different classes.
+    
     public double[] penalties = new double[] {0 , 0};
     public double mw;
     public double mb;
@@ -65,7 +68,10 @@ public class Calculations {
         // negativeBlack.addAll(whitePawn);
         if(whitePawn != null)
             negativeBlack.addAll(whitePawn);
-
+        
+        // Take all the listed items and choose only unique ones from the list.
+        // Uniqueness is based on the piece name and piece position.
+        
         Set<String> minusBlack = new HashSet<>(negativeBlack);
 
         // I need to use this because they could not think I might want to use
