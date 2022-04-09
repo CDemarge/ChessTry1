@@ -65,13 +65,6 @@ public class Board {
         return blackPieces;
     }
 
-    static double K = 100;
-    static double Q = 9;
-    static double R = 5;
-    static double B = 3;
-    static double A = 3;
-    static double P = 1;
-
     public void printBoard(){
         double wob = 0;
         double bob = 0;
@@ -82,32 +75,32 @@ public class Board {
                     AbstractPiece piece = boardSquares[i][j].getCurrentPiece();
                     if(piece.getPieceColor().equals(PieceColor.WHITE)) {
                         if(piece.getName().equals("Rook")){
-                            wob = wob + R;
+                            wob = wob + calculations.R;
                         } else if(piece.getName().equals("Queen")){
-                            wob = wob + Q;
+                            wob = wob + calculations.Q;
                         } else if(piece.getName().equals("King")){
-                            wob = wob + K;
+                            wob = wob + calculations.K;
                         } else if(piece.getName().equals("AKnight")){
-                            wob = wob + A;
+                            wob = wob + calculations.A;
                         } else if(piece.getName().equals("Bishop")){
-                            wob = wob + B;
+                            wob = wob + calculations.B;
                         }  else if(piece.getName().equals("Pawn")){
-                            wob = wob + P;
+                            wob = wob + calculations.P;
                         }
                         System.out.print("W" + piece.getName().charAt(0) + "  ");
                     } else {
                         if(piece.getName().equals("Rook")){
-                            bob = bob + R;
+                            bob = bob + calculations.R;
                         } else if(piece.getName().equals("Queen")){
-                            bob = bob + Q;
+                            bob = bob + calculations.Q;
                         } else if(piece.getName().equals("King")){
-                            bob = bob + K;
+                            bob = bob + calculations.K;
                         } else if(piece.getName().equals("AKnight")){
-                            bob = bob + A;
+                            bob = bob + calculations.A;
                         } else if(piece.getName().equals("Bishop")){
-                            bob = bob + B;
+                            bob = bob + calculations.B;
                         }  else if(piece.getName().equals("Pawn")){
-                            bob = bob + P;
+                            bob = bob + calculations.P;
                         }
                         System.out.print("B" + piece.getName().charAt(0) + "  ");
                     }
