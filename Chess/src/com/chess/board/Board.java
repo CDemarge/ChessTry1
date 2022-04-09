@@ -33,12 +33,18 @@ public class Board {
             int column = 0;
             SquareColor currentColor = (i % 2 == 0) ? SquareColor.LIGHT : SquareColor.DARK;
             for(File file : File.values()){
+                
+                // BOARD_LENGHT-i is used so the squares shows the value of the chess table more realisticly.
+                
                 Square newSquare = new Square(currentColor, new Location(file, BOARD_LENGTH-i));
                 if (pieces.containsKey(newSquare.getLocation())){
                     AbstractPiece piece = pieces.get(newSquare.getLocation());
                     newSquare.setCurrentPiece(piece);
                     newSquare.setOccupied(true);
                     piece.setCurrentSquare(newSquare);
+                    
+                    // Listing the pieces based on the piece color so that they can be called individually.
+                    
                     if (piece.getPieceColor().equals(PieceColor.WHITE)) {
                         whitePieces.add(piece);
                     } else {
@@ -74,6 +80,9 @@ public class Board {
                 if (boardSquares[i][j].isOccupied()){
                     AbstractPiece piece = boardSquares[i][j].getCurrentPiece();
                     if(piece.getPieceColor().equals(PieceColor.WHITE)) {
+                        
+                        // Calling all piece values from the Calculations class for each chess piece on board.
+                        
                         if(piece.getName().equals("Rook")){
                             wob = wob + calculations.R;
                         } else if(piece.getName().equals("Queen")){
@@ -118,6 +127,10 @@ public class Board {
             System.out.print(file.name() + "   ");
 
         }
+        
+        // I wanted to see if I can call the pieces right. I could call the numbers but
+        // Listing part of the program was not working which I tried to work on it.
+        
         // penalties = calculations.Calculations();
         // double mb = penalties[0];
         // double mw = penalties[1];
